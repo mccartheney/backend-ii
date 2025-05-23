@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package streamservice;
+
+service Streamer {
+    rpc StreamNumbers (StreamRequest) returns (stream StreamReply) {}
+}
+
+message StreamRequest {
+    int32 count = 1;
+}
+
+message StreamReply {
+    int32 number = 1;
+}
